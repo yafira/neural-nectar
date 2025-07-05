@@ -68,7 +68,7 @@ function draw() {
 	}
 }
 
-// 🍯 Draw nectar that hugs jar and disappears when too small
+// Draw nectar that hugs jar and disappears when too small
 function drawNectar(level) {
 	if (level < 5) return
 
@@ -94,7 +94,7 @@ function drawNectar(level) {
 	}
 }
 
-// 🫙 Draw jar with closed bottom and highlights
+// Draw jar with closed bottom and highlights
 function drawJar() {
 	noFill()
 	stroke(0)
@@ -120,12 +120,12 @@ function drawJar() {
 
 	// Lid
 	// Thicker Lid
-	fill('#9BDF8C')
+	fill('#B3E4C7')
 	stroke(0)
 	strokeWeight(2)
 	rect(cx - 55, topY - 20, 110, 16, 6)
 
-	// 🏷️ Apricot label (handwritten diagonal tape)
+	// Apricot label (handwritten diagonal tape)
 	push()
 	translate(width / 2, jarY + jarHeight / 2) // Center of jar
 	rotate(radians(-15)) // Diagonal tilt
@@ -162,7 +162,7 @@ function drawJar() {
 	ellipse(cx, topY + 8, 80, 12)
 }
 
-// 🩹 Mask bottom nectar overflow (visual cleanup)
+// Mask bottom nectar overflow (visual cleanup)
 function maskJarBottom() {
 	let cx = width / 2
 	let bottomY = jarY + jarHeight
@@ -184,7 +184,7 @@ function maskJarBottom() {
 	endShape(CLOSE)
 }
 
-// 🫧 Bubble class with pastel color and motion
+// Bubble class with pastel color and motion
 class Bubble {
 	constructor() {
 		this.reset()
