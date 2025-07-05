@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Neural Nectar: Mood Mirror</title>
+
+		<!-- Comfortaa Font -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Styles + Libraries -->
+		<link rel="stylesheet" href="style.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+		<script src="https://unpkg.com/ml5@0.12.2/dist/ml5.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<h1>🪞 Mood Mirror</h1>
+			<p class="subtitle">
+				Neural Nectar Series: Discover your text's emotional essence
+			</p>
+
+			<p id="loadingStatus" class="loading">Loading model... ⏳</p>
+
+			<div class="input-container">
+				<input
+					type="text"
+					id="textInput"
+					placeholder="Type something magical... ✨"
+					maxlength="200"
+				/>
+				<br />
+				<button id="analyzeBtn" onclick="analyzeMood()" disabled>
+					Loading...
+				</button>
+			</div>
+
+			<div class="canvas-container">
+				<div id="sketch-holder"></div>
+			</div>
+
+			<div class="instructions">
+				<strong>🌟 How it works:</strong><br />
+				Type any sentence and instantly see its emotional essence! Each mood
+				comes with magical nectar droplets.
+				<br /><br />
+				<strong>💡 Try these:</strong> "I feel anxious" • "Pizza is amazing!" •
+				"I love rainy nights."
+			</div>
+		</div>
+
+		<script src="sketch.js"></script>
+	</body>
+</html>
