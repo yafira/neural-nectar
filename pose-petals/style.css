@@ -6,6 +6,26 @@ body {
 	color: #a14a76;
 }
 
+p {
+	font-size: 1rem;
+	color: #333;
+}
+
+#subtitle {
+	position: absolute;
+	top: 4.5rem;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 1.1rem;
+	padding: 0.3rem 1rem;
+	border-radius: 1rem;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+	z-index: 10;
+	text-align: center;
+	color: #ffffff;
+	font-weight: 500;
+}
+
 #title {
 	position: absolute;
 	top: 1rem;
