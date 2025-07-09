@@ -1,0 +1,21 @@
+body {
+	margin: 0;
+	overflow: hidden;
+	background: radial-gradient(circle at center, #fff0f6 0%, #ffe5ec 100%);
+	font-family: 'Quicksand', sans-serif;
+	color: #a14a76;
+}
+
+#title {
+	position: absolute;
+	top: 1rem;
+	left: 50%;
+	transform: translateX(-50%);
+	font-family: 'Cherry Bomb One', cursive;
+	font-size: 2.5rem;
+	background: rgba(255, 255, 255, 0.6);
+	padding: 0.4rem 1rem;
+	border-radius: 1rem;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	z-index: 10;
+}
