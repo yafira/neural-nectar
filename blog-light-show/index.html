@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Blob Classifier</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Load TensorFlow.js FIRST -->
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.13.0/dist/tf.min.js"></script>
+
+		<!-- Then ml5.js -->
+		<script src="https://cdn.jsdelivr.net/npm/ml5@latest/dist/ml5.min.js"></script>
+
+		<!-- p5.js -->
+		<script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.min.js"></script>
+
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<main>
+			<h1>🪼 squishy blob classifier</h1>
+
+			<button id="connect">🔌 connect serial</button>
+
+			<div class="buttons">
+				<button onclick="addExample('blob1')">💚 Add Blob 1</button>
+				<button onclick="addExample('blob2')">💙 Add Blob 2</button>
+			</div>
+
+			<button onclick="trainModel()">🧠 train model</button>
+
+			<p id="prediction">waiting for touch...</p>
+
+			<div id="canvas-container"></div>
+		</main>
+
+		<script src="./sketch.js"></script>
+	</body>
+</html>

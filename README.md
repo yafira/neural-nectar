@@ -14,12 +14,13 @@ Created as part of ongoing research into poetic computing, aesthetic ML, and cut
 
 ## 🍬 Experiments
 
-| Project | Description |
-|--------|-------------|
-| 🪞 **Mood Mirror** | Analyzes your words and reflects your emotional aura with shimmering color and emoji. |
-| 🍑 **Nectar Barometer** | Mic input fills a jar of digital nectar — a mood barometer for your space. |
-| 🌸 **Pose Petals** | Your hand (or nose, eyes, elbows etc.) movements bloom into glowing flower trails. |
-| 🔮 *(More coming soon...)* | Stay tuned for future experiments that bring neural sweetness to your screen. |
+| Project                                     | Description                                                                           |
+| ------------------------------------------- | ------------------------------------------------------------------------------------- |
+| 🪞 **Mood Mirror**                          | Analyzes your words and reflects your emotional aura with shimmering color and emoji. |
+| 🍑 **Nectar Barometer**                     | Mic input fills a jar of digital nectar — a mood barometer for your space.            |
+| 🌸 **Pose Petals**                          | Your hand (or nose, eyes, elbows etc.) movements bloom into glowing flower trails.    |
+| 🪼 **Blob Light Show** _testing/in progress_ | Touch a squishy agar blob to spark light — a soft interface for glowing interaction.  |
+| 🔮 _(More coming soon...)_                  | Stay tuned for future experiments that bring neural sweetness to your screen.         |
 
 ---
 
@@ -27,24 +28,29 @@ Created as part of ongoing research into poetic computing, aesthetic ML, and cut
 
 - [ml5.js](https://ml5js.org/) – friendly machine learning for the web
 - [p5.js](https://p5js.org/) – creative coding in JavaScript
-- [teachablemachine.withgoogle.com](https://teachablemachine.withgoogle.com/) *(for custom models)*
+- [teachablemachine.withgoogle.com](https://teachablemachine.withgoogle.com/) _(for custom models)_
 
 ---
 
 ## 🌐 How to Run Locally
 
 1. Clone this repo:
+
    ```bash
    git clone https://github.com/your-username/neural-nectar.git
    cd neural-nectar
+
+   ```
 
 2. Open any project folder inside the `neural-nectar/` directory.
 
 3. Launch a local server (choose one of the following methods):
 
    **Using Python:**
+
    ```bash
    python -m http.server
+   ```
 
 **Or use the "Live Server" extension in VS Code.**
 
@@ -59,20 +65,21 @@ Created as part of ongoing research into poetic computing, aesthetic ML, and cut
 ## 🌸 Aesthetic Philosophy
 
 **Neural Nectar** embraces softness, slowness, and emotional interaction in computing.
-It's about *gentle intelligence*, not artificial dominance.
+It's about _gentle intelligence_, not artificial dominance.
 Every sketch is an offering — a quiet ritual between human and machine.
 
 ---
 
 ## ⭐️ Inspiration
 
-* **Poetic Computation** – influenced by Taeyoon Choi and the School for Poetic Computation
-* **Cute Interfaces** – inspired by Tamagotchi, Polly Pocket, and retro-futuristic design
-* **Accessible ML** – using [ml5.js](https://ml5js.org/) to democratize experimentation and joy
+- **Poetic Computation** – influenced by Taeyoon Choi and the School for Poetic Computation
+- **Cute Interfaces** – inspired by Tamagotchi, Polly Pocket, and retro-futuristic design
+- **Accessible ML** – using [ml5.js](https://ml5js.org/) to democratize experimentation and joy
 
 ---
 
-
 Thanks to the **ml5.js community** and open-source contributors everywhere 💖
+
+```
 
 ```
