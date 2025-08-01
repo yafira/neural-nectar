@@ -79,7 +79,3 @@ Every sketch is an offering — a quiet ritual between human and machine.
 ---
 
 Thanks to the **ml5.js community** and open-source contributors everywhere 💖
-
-```
-
-```
