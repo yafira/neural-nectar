@@ -3,10 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>neural nectar 🍯 soft ml experiments</title>
+    <title>neural nectar | soft ml experiments</title>
     <meta
       name="description"
       content="a microbrewery of soft, poetic machine learning experiments made with ml5.js and p5.js"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon-16.png"
+    />
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/favicon-180.png"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,308 +32,20 @@
       href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap"
       rel="stylesheet"
     />
-    <style>
-      :root {
-        --blush: #f7d6dd;
-        --blush-deep: #e8a2b3;
-        --matcha: #d9e8cf;
-        --matcha-deep: #9dbd8a;
-        --butter: #fdf0c2;
-        --butter-deep: #e8c95a;
-        --honey: #f2b74b;
-        --wisteria: #ddd3f0;
-        --wisteria-deep: #a893d6;
-        --ink: #4a4159;
-        --ink-soft: #8a819c;
-        --paper: #fffaf3;
-        --card: #ffffff;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        font-family: "IBM Plex Mono", monospace;
-        background: var(--paper);
-        color: var(--ink);
-        min-height: 100vh;
-        background-image:
-          radial-gradient(
-            circle at 12% 8%,
-            rgba(247, 214, 221, 0.35) 0 220px,
-            transparent 260px
-          ),
-          radial-gradient(
-            circle at 88% 20%,
-            rgba(221, 211, 240, 0.35) 0 200px,
-            transparent 240px
-          ),
-          radial-gradient(
-            circle at 70% 90%,
-            rgba(217, 232, 207, 0.3) 0 240px,
-            transparent 280px
-          );
-      }
-
-      .wrap {
-        max-width: 880px;
-        margin: 0 auto;
-        padding: 3.5rem 1.25rem 4rem;
-      }
-
-      /* ── header ─────────────────────────── */
-      header {
-        text-align: center;
-        margin-bottom: 3rem;
-        position: relative;
-      }
-
-      .jar {
-        font-size: 2.6rem;
-        display: inline-block;
-        animation: bob 4s ease-in-out infinite;
-      }
-      @keyframes bob {
-        0%,
-        100% {
-          transform: translateY(0) rotate(-3deg);
-        }
-        50% {
-          transform: translateY(-6px) rotate(3deg);
-        }
-      }
-
-      h1 {
-        font-family: "Pixelify Sans", sans-serif;
-        font-weight: 600;
-        font-size: clamp(2.2rem, 6vw, 3.4rem);
-        letter-spacing: 0.02em;
-        margin: 0.35rem 0 0.6rem;
-      }
-      h1 .neural {
-        color: var(--wisteria-deep);
-      }
-      h1 .nectar {
-        color: var(--honey);
-      }
-
-      .tagline {
-        color: var(--ink-soft);
-        font-size: 0.92rem;
-        max-width: 46ch;
-        margin: 0 auto 1.4rem;
-        line-height: 1.6;
-      }
-
-      /* honey drip under the title — the one flourish */
-      .drip {
-        width: 220px;
-        height: 26px;
-        margin: 0 auto;
-        display: block;
-      }
-      .drip circle {
-        animation: fall 3.2s ease-in infinite;
-      }
-      .drip circle:nth-child(2) {
-        animation-delay: 1.1s;
-      }
-      .drip circle:nth-child(3) {
-        animation-delay: 2.2s;
-      }
-      @keyframes fall {
-        0% {
-          transform: translateY(0);
-          opacity: 0;
-        }
-        15% {
-          opacity: 1;
-        }
-        85% {
-          opacity: 1;
-        }
-        100% {
-          transform: translateY(18px);
-          opacity: 0;
-        }
-      }
-
-      /* ── stitched section label ─────────── */
-      .label {
-        display: flex;
-        align-items: center;
-        gap: 0.9rem;
-        margin: 0 0 1.4rem;
-        color: var(--ink-soft);
-        font-size: 0.78rem;
-        letter-spacing: 0.14em;
-        text-transform: lowercase;
-      }
-      .label::before,
-      .label::after {
-        content: "";
-        flex: 1;
-        border-top: 2px dashed var(--blush-deep);
-        opacity: 0.5;
-      }
-
-      /* ── cards ──────────────────────────── */
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 1.25rem;
-      }
-
-      .card {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        gap: 0.55rem;
-        background: var(--card);
-        border: 2px dashed var(--ink-soft);
-        border-radius: 14px;
-        padding: 1.4rem 1.25rem 1.2rem;
-        text-decoration: none;
-        color: var(--ink);
-        transition:
-          transform 0.18s ease,
-          box-shadow 0.18s ease,
-          border-color 0.18s ease;
-      }
-      .card:hover,
-      .card:focus-visible {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 0 0 var(--accent, var(--butter));
-        border-color: var(--ink);
-        outline: none;
-      }
-      .card:focus-visible {
-        outline: 3px solid var(--wisteria-deep);
-        outline-offset: 3px;
-      }
-
-      .card .emoji {
-        font-size: 1.9rem;
-        line-height: 1;
-      }
-
-      .card h2 {
-        font-family: "Pixelify Sans", sans-serif;
-        font-weight: 600;
-        font-size: 1.25rem;
-        letter-spacing: 0.01em;
-      }
-
-      .card p {
-        font-size: 0.82rem;
-        line-height: 1.6;
-        color: var(--ink-soft);
-        flex: 1;
-      }
-
-      .card .meta {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        font-size: 0.72rem;
-      }
-
-      .chip {
-        display: inline-block;
-        padding: 0.2rem 0.6rem;
-        border-radius: 999px;
-        background: var(--accent, var(--butter));
-        color: var(--ink);
-        letter-spacing: 0.06em;
-      }
-
-      .go {
-        color: var(--ink-soft);
-        transition: transform 0.18s ease;
-      }
-      .card:hover .go {
-        transform: translateX(4px);
-        color: var(--ink);
-      }
-
-      .wip {
-        position: absolute;
-        top: -0.7rem;
-        right: 1rem;
-        background: var(--butter);
-        border: 2px dashed var(--butter-deep);
-        border-radius: 999px;
-        padding: 0.15rem 0.6rem;
-        font-size: 0.68rem;
-        letter-spacing: 0.08em;
-      }
-
-      /* per-card accents */
-      .card.mood {
-        --accent: var(--blush);
-      }
-      .card.barometer {
-        --accent: var(--butter);
-      }
-      .card.petals {
-        --accent: var(--matcha);
-      }
-      .card.blob {
-        --accent: var(--wisteria);
-      }
-
-      /* soon card */
-      .card.soon {
-        border-style: dotted;
-        background: transparent;
-        cursor: default;
-      }
-      .card.soon:hover {
-        transform: none;
-        box-shadow: none;
-        border-color: var(--ink-soft);
-      }
-
-      /* ── footer ─────────────────────────── */
-      footer {
-        margin-top: 3.5rem;
-        text-align: center;
-        font-size: 0.78rem;
-        color: var(--ink-soft);
-        line-height: 2;
-      }
-      footer a {
-        color: var(--wisteria-deep);
-        text-decoration-style: dashed;
-        text-underline-offset: 3px;
-      }
-      footer a:hover {
-        color: var(--ink);
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        .jar,
-        .drip circle {
-          animation: none;
-        }
-        .card,
-        .go {
-          transition: none;
-        }
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <div class="wrap">
       <header>
-        <span class="jar" aria-hidden="true">🍯</span>
+        <img
+          class="jar"
+          src="./assets/nectar-jar.png"
+          alt="an illustrated jar of lavender nectar with a tag reading a small neural network diagram, orbited by three bees"
+        />
         <h1>
           <span class="neural">neural</span> <span class="nectar">nectar</span>
         </h1>
@@ -334,7 +64,7 @@
 
       <main class="grid">
         <a class="card mood" href="./mood-mirror/">
-          <span class="emoji" aria-hidden="true">🪞</span>
+          <i class="icon fa-solid fa-face-smile" aria-hidden="true"></i>
           <h2>mood mirror</h2>
           <p>
             type your feelings and watch them reflect back as shimmering color
@@ -342,12 +72,12 @@
           </p>
           <span class="meta">
             <span class="chip">text · sentiment</span>
-            <span class="go" aria-hidden="true">→</span>
+            <i class="go fa-solid fa-arrow-right" aria-hidden="true"></i>
           </span>
         </a>
 
         <a class="card barometer" href="./nectar-barometer/">
-          <span class="emoji" aria-hidden="true">🍑</span>
+          <i class="icon fa-solid fa-gauge-high" aria-hidden="true"></i>
           <h2>nectar barometer</h2>
           <p>
             your mic fills a jar of digital nectar — a slow mood barometer for
@@ -355,12 +85,12 @@
           </p>
           <span class="meta">
             <span class="chip">mic · sound</span>
-            <span class="go" aria-hidden="true">→</span>
+            <i class="go fa-solid fa-arrow-right" aria-hidden="true"></i>
           </span>
         </a>
 
         <a class="card petals" href="./pose-petals/">
-          <span class="emoji" aria-hidden="true">🌸</span>
+          <i class="icon fa-solid fa-spa" aria-hidden="true"></i>
           <h2>pose petals</h2>
           <p>
             move your hands (or nose, or elbows) and leave glowing flower trails
@@ -368,13 +98,16 @@
           </p>
           <span class="meta">
             <span class="chip">camera · pose</span>
-            <span class="go" aria-hidden="true">→</span>
+            <i class="go fa-solid fa-arrow-right" aria-hidden="true"></i>
           </span>
         </a>
 
         <a class="card blob" href="./blog-light-show/">
-          <span class="wip">✿ in progress</span>
-          <span class="emoji" aria-hidden="true">🪼</span>
+          <span class="wip"
+            ><i class="fa-solid fa-flask" aria-hidden="true"></i> in
+            progress</span
+          >
+          <i class="icon fa-solid fa-droplet" aria-hidden="true"></i>
           <h2>blob light show</h2>
           <p>
             touch a squishy agar blob to spark light — a soft, biological
@@ -382,12 +115,12 @@
           </p>
           <span class="meta">
             <span class="chip">touch · agar</span>
-            <span class="go" aria-hidden="true">→</span>
+            <i class="go fa-solid fa-arrow-right" aria-hidden="true"></i>
           </span>
         </a>
 
         <div class="card soon" aria-hidden="true">
-          <span class="emoji">🔮</span>
+          <i class="icon fa-solid fa-wand-magic-sparkles"></i>
           <h2>???</h2>
           <p>more neural sweetness brewing — stay tuned.</p>
           <span class="meta"
@@ -401,7 +134,10 @@
       </main>
 
       <footer>
-        <p>gentle intelligence, not artificial dominance ✿</p>
+        <p>
+          gentle intelligence, not artificial dominance
+          <i class="fa-solid fa-seedling" aria-hidden="true"></i>
+        </p>
         <p>
           <a href="https://github.com/yafira/neural-nectar">view on github</a> ·
           <a href="https://electrocute.io">electrocute lab</a>
